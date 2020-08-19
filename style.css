@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;800;900&display=swap');
+
+:root {
+    --cyan: hsl(180, 66%, 49%);
+    --darkviolet: hsl(257, 27%, 26%);
+    --red: hsl(0, 87%, 67%);
+    --gray: hsl(0, 0%, 75%);
+    --grayishviolet: hsl(257, 7%, 63%);
+    --darkblue: hsl(255, 11%, 22%);
+    --verydarkviolet: hsl(260, 8%, 14%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+}
+
+.container {
+    width: 80%;
+    margin: 30px auto;
+    overflow: hidden;
+}
+
+header {
+    height: 10vh;
+    width: 100vw;
+}
+
+.logo,
+nav {
+    float: left;
+}
+
+nav {
+    margin-left: 20px;
+}
+
+.login-container {
+    float: right;
+}
+
+.nav-links li {
+    list-style: none;
+    display: inline-block;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    font-size: .7em;
+    font-weight: bold;
+    color: var(--grayishviolet);
+    margin: 0 10px;
+}
+
+#signbtn a {
+    color: white;
+    background-color: var(--cyan);
+    border: 1px solid var(--cyan);
+    padding: 5px 15px;
+    border-radius: 30px;
+}
