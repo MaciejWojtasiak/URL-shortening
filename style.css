@@ -4,7 +4,7 @@
     --cyan: hsl(180, 66%, 49%);
     --darkviolet: hsl(257, 27%, 26%);
     --red: hsl(0, 87%, 67%);
-    --gray: hsl(0, 0%, 75%);
+    --gray: #F0F1F6;
     --grayishviolet: hsl(257, 7%, 63%);
     --darkblue: hsl(255, 11%, 22%);
     --verydarkviolet: hsl(260, 8%, 14%);
@@ -27,6 +27,14 @@ h1,
 h2,
 h3 {
     color: var(--darkblue);
+}
+
+button {
+    outline: none;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 .btn {
@@ -104,12 +112,15 @@ h3 {
 }
 
 .inputbox {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 80%;
     height: 15vh;
     margin: 0 auto;
+    margin-bottom: -50px;
+    z-index: 1;
     border-radius: 10px;
     background-image: url(images/bg-shorten-desktop.svg);
     background-size: cover;
@@ -119,8 +130,83 @@ h3 {
 .inputbox input {
     width: 80%;
     height: 38px;
+    padding: 0 20px;
     border-radius: 10px;
     outline: none;
     border: none;
     margin-right: 20px;
+}
+
+main {
+    background-color: var(--gray);
+}
+
+.main-content {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 150px;
+
+}
+
+.main-info,
+.cards {
+    flex: 1;
+}
+
+.main-info {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.main-info p {
+    font-size: .8em;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    position: relative;
+    background-color: white;
+    margin: 10px;
+    padding: 25px;
+    border-radius: 5px;
+}
+
+.card img {
+    position: absolute;
+    top: -30px;
+    left: 40px;
+    background-color: var(--darkviolet);
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.card h3 {
+    margin-top: 40px;
+}
+
+.card p {
+    font-size: .7em;
+}
+
+.banner {
+    min-height: 25vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(images/bg-shorten-desktop.svg);
+    background-size: cover;
+    background-color: var(--darkviolet);
+    text-align: center;
+}
+
+.banner h2 {
+    color: white;
 }
