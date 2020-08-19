@@ -1,3 +1,3 @@
 # URL-shortening
 Frontend Mentor URL shortening challenge,
-Project in progress
+project in progress
