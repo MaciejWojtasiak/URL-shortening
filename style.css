@@ -24,34 +24,28 @@ html {
 
 .container {
     width: 80%;
+    max-width: 1440px;
     margin: 30px auto;
     overflow: hidden;
 }
 
-header {
-    height: 10vh;
-    width: 100vw;
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.logo,
-nav {
-    float: left;
-}
-
-nav {
+.main-nav ul.main-menu {
+    flex: 1;
     margin-left: 20px;
 }
 
-.login-container {
-    float: right;
-}
-
-.nav-links li {
+.links li {
     list-style: none;
     display: inline-block;
 }
 
-.nav-links li a {
+.links li a {
     text-decoration: none;
     font-size: .7em;
     font-weight: bold;
