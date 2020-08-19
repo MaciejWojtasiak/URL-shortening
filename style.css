@@ -20,14 +20,45 @@ body,
 html {
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
+    color: var(--grayishviolet);
+}
+
+h1,
+h2,
+h3 {
+    color: var(--darkblue);
+}
+
+.btn {
+    color: white;
+    font-weight: bold;
+    background-color: var(--cyan);
+    border: 1px solid var(--cyan);
+    border-radius: 30px;
+}
+
+.primary {
+    padding: 8px 25px;
+    margin-top: 20px;
+}
+
+.secondary {
+    padding: 5px 15px;
+}
+
+.submit {
+    padding: 10px 15px;
+    border-radius: 5px;
 }
 
 .container {
+    padding: 20px 0;
     width: 80%;
-    max-width: 1440px;
-    margin: 30px auto;
-    overflow: hidden;
+    margin: 0 auto;
+    /* overflow: hidden; */
 }
+
+
 
 .main-nav {
     display: flex;
@@ -49,14 +80,47 @@ html {
     text-decoration: none;
     font-size: .7em;
     font-weight: bold;
-    color: var(--grayishviolet);
     margin: 0 10px;
+    color: var(--grayishviolet);
 }
 
-#signbtn a {
-    color: white;
-    background-color: var(--cyan);
-    border: 1px solid var(--cyan);
-    padding: 5px 15px;
-    border-radius: 30px;
+.showcase {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.showcase__info,
+.showcase__image {
+    flex: 1;
+}
+
+.showcase__info h1 {
+    font-size: 2.8em;
+}
+
+.showcase__image img {
+    max-width: 100%;
+}
+
+.inputbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 15vh;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-image: url(images/bg-shorten-desktop.svg);
+    background-size: cover;
+    background-color: var(--darkviolet);
+}
+
+.inputbox input {
+    width: 80%;
+    height: 38px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    margin-right: 20px;
 }
