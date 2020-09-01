@@ -280,8 +280,14 @@ button:hover {
 }
 
 .copy {
-    padding: 5px 20px;
+    width: 96px;
+    height: 36px;
     border-radius: 5px;
+}
+
+.copied {
+    background-color: var(--verydarkviolet);
+    border: 1px solid var(--verydarkviolet);
 }
 
 main {

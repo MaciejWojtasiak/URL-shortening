@@ -1,7 +1,6 @@
 const field = document.querySelector('.field');
 const submitBtn = document.querySelector('.submit');
 const linkContainer = document.querySelector('.links-container');
-const copyButton = document.querySelectorAll('.copy');
 const errorMessage = document.getElementById('error');
 
 
@@ -34,8 +33,6 @@ function sendUrl() {
         }
     }
 
-
-
     xhr.send(data);
 }
 
@@ -50,7 +47,7 @@ function addLink(inputUrl, hashId) {
         </div>
         <div class="link-right">
         <p class="shortened">${shortened}</p>
-        <button class="btn copy">Copy</button>
+        <button id="copyBtn" class="btn copy">Copy</button>
      </div> 
       `;
     field.value = ' ';
@@ -65,8 +62,25 @@ function checkAdress(url) {
 }
 
 
-function copyLink(e) {
-    if (e.target.className.includes('copy')) { console.log(e.target); }
+function copyLink(event) {
+    if (event.target.id != 'copyBtn') return;
+
+    let button = event.target;
+    let text = button.parentNode.querySelector('.shortened').innerText;
+
+    const textarea = document.createElement('textarea');
+    textarea.setAttribute('readonly', '');
+    textarea.style.position = 'absolute';
+    textarea.value = text;
+    document.body.appendChild(textarea);
+    textarea.select();
+    document.execCommand("copy");
+    button.classList.toggle('copied');
+    button.innerHTML = 'Copied!';
+    setTimeout(() => {
+        button.classList.toggle('copied');
+        button.innerHTML = 'Copy';
+    }, 600)
 
 }
 
