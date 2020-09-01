@@ -25,85 +25,87 @@
 </head>
 
 <body>
-  <header>
-    <div class="container">
-      <nav class="main-nav">
-        <img src="images/logo.svg" alt="">
+  <div class="wrapper">
+    <header>
+      <div class="container">
+        <nav class="main-nav">
+          <img src="images/logo.svg" alt="">
 
-        <ul class="main-menu links">
-          <li><a href="#">Features</a></li>
-          <li><a href="#">Pricing</a></li>
-          <li><a href="#">Resources</a></li>
-        </ul>
+          <ul class="main-menu links">
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Resources</a></li>
+          </ul>
 
-        <ul class="right-menu links">
-          <li><a href="#">Login</a></li>
-          <li><button class="btn secondary">Sign Up</button></li>
-        </ul>
-      </nav>
+          <ul class="right-menu links">
+            <li><a href="#">Login</a></li>
+            <li><button class="btn secondary">Sign Up</button></li>
+          </ul>
+        </nav>
 
-      <!-- Showcase -->
-      <div class="showcase">
-        <div class="showcase__info">
-          <h1>More than just shorter links</h1>
-          <p>Build your brand’s recognition and get detailed insights
-            on how your links are performing.</p>
-          <button class="btn primary">Get Started</button>
+        <!-- Showcase -->
+        <div class="showcase">
+          <div class="showcase__info">
+            <h1>More than just shorter links</h1>
+            <p>Build your brand’s recognition and get detailed insights
+              on how your links are performing.</p>
+            <button class="btn primary">Get Started</button>
+          </div>
+          <div class="showcase__image">
+            <img src="images/illustration-working.svg" alt="">
+          </div>
         </div>
-        <div class="showcase__image">
-          <img src="images/illustration-working.svg" alt="">
+    </header>
+
+    <div class="inputbox">
+      <!-- <form action="POST"> -->
+      <input type="text" class="field" placeholder="Shorten a link here...">
+      <button class="btn submit">Shorten It!</button>
+      <!-- </form> -->
+    </div>
+
+    <main>
+      <div class="container">
+        <div class="main-content">
+          <div class="main-info">
+            <h2>Advanced Statistics</h2>
+            <p> Track how your links are performing across the web with our
+              advanced statistics dashboard.</p>
+          </div>
+          <div class="cards">
+            <div class="card">
+              <img src="images/icon-brand-recognition.svg" alt="">
+              <h3>Brand Recognition</h3>
+              <p>Boost your brand recognition with each click. Generic links don’t
+                mean a thing. Branded links help instil confidence in your content.</p>
+            </div>
+            <div class="card">
+              <img src="images/icon-detailed-records.svg" alt="">
+              <h3>Detailed Records</h3>
+              <p>Gain insights into who is clicking your links. Knowing when and where
+                people engage with your content helps inform better decisions.</p>
+            </div>
+            <div class="card">
+              <img src="images/icon-fully-customizable.svg" alt="">
+              <h3>Fully Customizable</h3>
+              <p>Improve brand awareness and content discoverability through customizable
+                links, supercharging audience engagement.</p>
+            </div>
+          </div>
         </div>
       </div>
-  </header>
+    </main>
 
-  <div class="inputbox">
-    <!-- <form action="POST"> -->
-    <input type="text" class="field" placeholder="Shorten a link here...">
-    <button class="btn submit">Shorten It!</button>
-    <!-- </form> -->
-  </div>
-
-  <main>
-    <div class="container">
-      <div class="main-content">
-        <div class="main-info">
-          <h2>Advanced Statistics</h2>
-          <p> Track how your links are performing across the web with our
-            advanced statistics dashboard.</p>
-        </div>
-        <div class="cards">
-          <div class="card">
-            <img src="images/icon-brand-recognition.svg" alt="">
-            <h3>Brand Recognition</h3>
-            <p>Boost your brand recognition with each click. Generic links don’t
-              mean a thing. Branded links help instil confidence in your content.</p>
-          </div>
-          <div class="card">
-            <img src="images/icon-detailed-records.svg" alt="">
-            <h3>Detailed Records</h3>
-            <p>Gain insights into who is clicking your links. Knowing when and where
-              people engage with your content helps inform better decisions.</p>
-          </div>
-          <div class="card">
-            <img src="images/icon-fully-customizable.svg" alt="">
-            <h3>Fully Customizable</h3>
-            <p>Improve brand awareness and content discoverability through customizable
-              links, supercharging audience engagement.</p>
-          </div>
-        </div>
+    <div class="banner">
+      <div class="banner__info">
+        <h2>Boost your links today</h2>
+        <button class="btn primary">Get Started</button>
       </div>
     </div>
-  </main>
-
-  <div class="banner">
-    <div class="banner__info">
-      <h2>Boost your links today</h2>
-      <button class="btn primary">Get Started</button>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://github.com/MaciejWojtasiak">Maciej Wojtasiak</a>.
     </div>
-  </div>
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="https://github.com/MaciejWojtasiak">Maciej Wojtasiak</a>.
   </div>
   <script src="shortener.js"></script>
 </body>

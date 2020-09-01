@@ -13,14 +13,21 @@ function sendUrl() {
     const jsonString = JSON.stringify({ "url": url });
 
     const xhr = new XMLHttpRequest();
+
     xhr.open('POST', 'https://rel.ink/api/links/', true);
 
     xhr.onload = function () {
-        console.log(JSON.parse(this.response));
+        let hash = JSON.parse(this.responseText);
+        console.log(hash)
     }
 
     xhr.setRequestHeader('content-Type', 'application/json');
-
+    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
 
     xhr.send(jsonString);
 }
+
+
+// function getUrl() {
+
+// }

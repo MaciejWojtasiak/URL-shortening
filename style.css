@@ -23,6 +23,11 @@ html {
     color: var(--grayishviolet);
 }
 
+.wrapper {
+    max-width: 100vw;
+    overflow: hidden;
+}
+
 h1,
 h2,
 h3 {
@@ -63,9 +68,13 @@ button:hover {
     padding: 20px 0;
     width: 80%;
     margin: 0 auto;
-    /* overflow: hidden; */
 }
 
+@media(max-width:560px) {
+    .container {
+        text-align: center;
+    }
+}
 
 
 .main-nav {
@@ -92,8 +101,15 @@ button:hover {
     color: var(--grayishviolet);
 }
 
+@media(max-width: 560px) {
+
+    .main-nav ul {
+        display: none;
+    }
+}
+
 .showcase {
-    margin-top: 100px;
+    margin: 90px 0;
     display: flex;
     justify-content: space-between;
 }
@@ -103,15 +119,66 @@ button:hover {
     flex: 1;
 }
 
+.showcase__image {
+    position: relative;
+}
+
+.showcase__image img {
+    position: absolute;
+    top: 0;
+    right: -200px;
+}
+
 .showcase__info h1 {
     font-size: 2.8em;
 }
 
 .showcase__image img {
-    max-width: 100%;
+    width: 500px;
+}
+
+
+@media(max-width: 560px) {
+    .showcase {
+        flex-direction: column;
+        margin-top: 0;
+    }
+
+    .showcase__info {
+        order: 2;
+    }
+
+    .showcase__info h1 {
+        font-size: 2em;
+    }
+
+    .showcase__info p {
+        font-size: .9em;
+    }
+
+    .showcase__info .primary {
+        padding: 10px 38px;
+        font-size: .9em;
+    }
+
+    .showcase__image {
+        order: 1;
+        position: static;
+    }
+
+
+    .showcase__image img {
+        position: static;
+        width: 600px;
+    }
+
+
 }
 
 .inputbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     width: 80%;
     height: 15vh;
@@ -124,13 +191,6 @@ button:hover {
     background-color: var(--darkviolet);
 }
 
-.inputbox form {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .inputbox .field {
     width: 80%;
@@ -146,12 +206,30 @@ button:hover {
     cursor: pointer;
 }
 
+@media(max-width:560px) {
+    .inputbox {
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 18vh;
+    }
+
+    .inputbox .field {
+        width: 90%;
+        padding: 0 20px;
+        margin-right: 0;
+    }
+
+    .inputbox .submit {
+        width: 90%;
+    }
+}
+
 main {
     background-color: var(--gray);
 }
 
 .main-content {
-    height: 70vh;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -228,4 +306,67 @@ main {
 
 .banner h2 {
     color: white;
+}
+
+@media(max-width:1000px) {
+    .card h3 {
+        font-size: .8em;
+    }
+
+    .card p {
+        font-size: .6em;
+    }
+}
+
+@media(max-width:768px) {
+    .card h3 {
+        font-size: .6em;
+    }
+
+    .card p {
+        font-size: .5em;
+    }
+
+}
+
+
+@media(max-width:655px) {
+    .card h3 {
+        font-size: .6em;
+    }
+
+    .card p {
+        font-size: .45em;
+    }
+
+}
+
+@media(max-width:560px) {
+    .main-content {
+        margin-top: 70px;
+    }
+
+    .main-info {
+        width: 100%;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .card {
+        margin-top: 50px;
+    }
+
+    .card img {
+        left: 103px;
+    }
+
+    .card:nth-of-type(2) {
+        margin-top: 50px;
+    }
+
+    .card:nth-of-type(3) {
+        margin-top: 50px;
+    }
 }
