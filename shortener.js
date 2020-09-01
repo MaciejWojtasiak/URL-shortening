@@ -24,6 +24,7 @@ function sendUrl() {
             const response = JSON.parse(xhr.responseText)
             const hashId = response.hashid;
             addLink(inputUrl, hashId);
+            alert('Success');
         } else {
             console.log(xhr.status);
         }
@@ -36,7 +37,7 @@ function sendUrl() {
 
 
 function addLink(inputUrl, hashId) {
-    const shortened = `https://rel.ink/api/links/${hashId}`;
+    const shortened = `https://rel.ink/${hashId}`;
 
     const newContainer = document.createElement('div');
     newContainer.classList.add('links-bar');
