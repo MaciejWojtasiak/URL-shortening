@@ -1,18 +1,25 @@
 const field = document.querySelector('.field');
 const submitBtn = document.querySelector('.submit');
-const linkContainer = document.querySelector('.links-container')
+const linkContainer = document.querySelector('.links-container');
+const copyButton = document.querySelectorAll('.copy');
+const errorMessage = document.getElementById('error');
 
-
-
-submitBtn.addEventListener('click', sendUrl)
 
 
 function sendUrl() {
+
     const xhr = new XMLHttpRequest();
     const url = 'https://rel.ink/api/links/'
     const inputUrl = field.value;
     const data = JSON.stringify({ "url": inputUrl });
 
+    if (checkAdress(inputUrl) != true) {
+        field.classList.add('error');
+        errorMessage.style.display = 'block';
+        return;
+    }
+    field.classList.remove('error');
+    errorMessage.style.display = 'none';
 
     xhr.open('POST', url, true);
 
@@ -24,9 +31,6 @@ function sendUrl() {
             const response = JSON.parse(xhr.responseText)
             const hashId = response.hashid;
             addLink(inputUrl, hashId);
-            alert('Success');
-        } else {
-            console.log(xhr.status);
         }
     }
 
@@ -35,17 +39,37 @@ function sendUrl() {
     xhr.send(data);
 }
 
-
 function addLink(inputUrl, hashId) {
     const shortened = `https://rel.ink/${hashId}`;
 
     const newContainer = document.createElement('div');
     newContainer.classList.add('links-bar');
-    newContainer.innerHTML = `<p class="link">${inputUrl}</p>
+    newContainer.innerHTML =
+        `<div class="link-left">
+        <p class="link">${inputUrl}</p>
+        </div>
+        <div class="link-right">
         <p class="shortened">${shortened}</p>
         <button class="btn copy">Copy</button>
+     </div> 
       `;
     field.value = ' ';
     linkContainer.appendChild(newContainer);
 }
 
+function checkAdress(url) {
+    const expression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+    const regex = new RegExp(expression);
+
+    return url.match(regex) ? true : false;
+}
+
+
+function copyLink(e) {
+    if (e.target.className.includes('copy')) { console.log(e.target); }
+
+}
+
+submitBtn.addEventListener('click', sendUrl);
+
+document.addEventListener('click', copyLink)

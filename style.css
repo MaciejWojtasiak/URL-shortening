@@ -191,6 +191,14 @@ button:hover {
     background-color: var(--darkviolet);
 }
 
+.inputbox p {
+    display: none;
+    position: absolute;
+    bottom: 4%;
+    left: 4%;
+    font-size: .6em;
+    color: var(--red);
+}
 
 .inputbox .field {
     width: 80%;
@@ -200,6 +208,10 @@ button:hover {
     outline: none;
     border: none;
     margin-right: 20px;
+}
+
+.inputbox .error {
+    border: 2px solid var(--red);
 }
 
 .inputbox .submit:hover {
@@ -228,6 +240,7 @@ button:hover {
     margin-top: 40px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .links-bar {
@@ -235,13 +248,26 @@ button:hover {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 15px;
     border-radius: 5px;
     background-color: white;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    width: 100%;
 }
 
 .links-bar p {
     font-size: .7em;
+}
+
+.link-left {
+    flex: 3;
+}
+
+.link-right {
+    flex: 2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .link {
@@ -250,6 +276,7 @@ button:hover {
 
 .shortened {
     color: var(--cyan);
+    margin-right: 10px;
 }
 
 .copy {
