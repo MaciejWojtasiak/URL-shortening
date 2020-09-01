@@ -224,6 +224,39 @@ button:hover {
     }
 }
 
+.links-container {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.links-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.links-bar p {
+    font-size: .7em;
+}
+
+.link {
+    color: var(--verydarkviolet);
+}
+
+.shortened {
+    color: var(--cyan);
+}
+
+.copy {
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
 main {
     background-color: var(--gray);
 }
@@ -235,7 +268,6 @@ main {
     justify-content: space-between;
     align-items: center;
     margin-top: 150px;
-
 }
 
 .main-info,

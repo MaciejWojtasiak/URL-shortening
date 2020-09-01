@@ -1,6 +1,6 @@
 const field = document.querySelector('.field');
 const submitBtn = document.querySelector('.submit');
-
+const linkContainer = document.querySelector('.links-container')
 
 
 
@@ -8,26 +8,43 @@ submitBtn.addEventListener('click', sendUrl)
 
 
 function sendUrl() {
-    let url = field.value + "";
-
-    const jsonString = JSON.stringify({ "url": url });
-
     const xhr = new XMLHttpRequest();
+    const url = 'https://rel.ink/api/links/'
+    const inputUrl = field.value;
+    const data = JSON.stringify({ "url": inputUrl });
 
-    xhr.open('POST', 'https://rel.ink/api/links/', true);
+
+    xhr.open('POST', url, true);
+
+    xhr.setRequestHeader('Content-type', 'application/json');
 
     xhr.onload = function () {
-        let hash = JSON.parse(this.responseText);
-        console.log(hash)
+
+        if (xhr.status === 201) {
+            const response = JSON.parse(xhr.responseText)
+            const hashId = response.hashid;
+            addLink(inputUrl, hashId);
+        } else {
+            console.log(xhr.status);
+        }
     }
 
-    xhr.setRequestHeader('content-Type', 'application/json');
-    xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
 
-    xhr.send(jsonString);
+
+    xhr.send(data);
 }
 
 
-// function getUrl() {
+function addLink(inputUrl, hashId) {
+    const shortened = `https://rel.ink/api/links/${hashId}`;
 
-// }
+    const newContainer = document.createElement('div');
+    newContainer.classList.add('links-bar');
+    newContainer.innerHTML = `<p class="link">${inputUrl}</p>
+        <p class="shortened">${shortened}</p>
+        <button class="btn copy">Copy</button>
+      `;
+    field.value = ' ';
+    linkContainer.appendChild(newContainer);
+}
+
