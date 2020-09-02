@@ -225,10 +225,16 @@ button:hover {
         height: 18vh;
     }
 
+    .inputbox p {
+        top: 45%;
+        left: 5%;
+    }
+
     .inputbox .field {
         width: 90%;
         padding: 0 20px;
         margin-right: 0;
+        margin-bottom: 10px;
     }
 
     .inputbox .submit {
