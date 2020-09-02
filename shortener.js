@@ -30,6 +30,7 @@ function sendUrl() {
             const response = JSON.parse(xhr.responseText)
             const hashId = response.hashid;
             addLink(inputUrl, hashId);
+            showToast();
         }
     }
 
@@ -81,9 +82,16 @@ function copyLink(event) {
         button.classList.toggle('copied');
         button.innerHTML = 'Copy';
     }, 600)
-
 }
 
+
+function showToast() {
+    const toast = document.getElementById('toast');
+    toast.classList.toggle('show');
+    setTimeout(() => {
+        toast.classList.toggle('show');
+    }, 1000)
+}
 submitBtn.addEventListener('click', sendUrl);
 
 document.addEventListener('click', copyLink)
