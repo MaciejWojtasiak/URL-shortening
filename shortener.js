@@ -2,7 +2,7 @@ const field = document.querySelector('.field');
 const submitBtn = document.querySelector('.submit');
 const linkContainer = document.querySelector('.links-container');
 const errorMessage = document.getElementById('error');
-
+const popUpCloseBtn = document.querySelector('.closeBtn');
 
 
 function sendUrl() {
@@ -92,6 +92,9 @@ function showToast() {
         toast.classList.toggle('show');
     }, 1000)
 }
-submitBtn.addEventListener('click', sendUrl);
 
-document.addEventListener('click', copyLink)
+submitBtn.addEventListener('click', sendUrl);
+document.addEventListener('click', copyLink);
+popUpCloseBtn.addEventListener('click', () => {
+    document.querySelector('.popUp').remove();
+})

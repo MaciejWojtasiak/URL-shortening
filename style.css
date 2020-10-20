@@ -548,3 +548,24 @@ main {
         opacity: 0;
     }
 }
+
+
+.popUp {
+    position: fixed;
+    width: 50vw;
+    height: 40vw;
+    top: 10%;
+    left: 50%;
+    padding: 20px;
+    transform: translateX(-50%);
+    background-color: black;
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+}
