@@ -8,7 +8,7 @@ You can find working solution here: https://maciejwojtasiak.github.io/URL-shorte
 ## Technologies used 
 HTML, CSS, JavaScript, API
 
-
-
+## INFO
+Unfortunately application won't work, because API domain was reported for malware activities, and shortlinking service rel.ink has been suspended.
 
 
